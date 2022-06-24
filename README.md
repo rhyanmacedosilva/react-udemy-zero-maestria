@@ -1,2 +1,2 @@
 # react-udemy-zero-maestria
-Projetos do curso de React da Udemy
+Projetos do curso de React da Udemy.
