@@ -1,0 +1,13 @@
+p{
+    color: lightgreen;
+    background-color: black;
+    font-weight: bold;
+    padding: 10px;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 4px;
+}
+
+.my-component-paragraph{
+    color: yellow;
+}

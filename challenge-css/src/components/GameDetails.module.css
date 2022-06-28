@@ -1,0 +1,12 @@
+.game_data {
+    color: red;
+    font-weight: bold;
+}
+
+.container {
+    margin: 10px;
+}
+
+.divider {
+    width: 200px;
+}
