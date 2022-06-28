@@ -11,6 +11,7 @@ import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
 import Message from './components/Message'
 import ChangeMessageState from './components/ChangeMessageState'
+import UserDetail from './components/UserDetail'
 
 function App() {
   const name = "Rhyan"
@@ -27,6 +28,11 @@ function App() {
   const handleMessage = (message) => {
     setMessage(message)
   }
+  const users = [
+    { id: 0, name: 'John', age: 24 },
+    { id: 1, name: 'Alexa', age: 22 },
+    { id: 2, name: 'Mabel', age: 17 }
+  ]
 
   return (
     <div className="App">
@@ -70,6 +76,10 @@ function App() {
       <div>
         <img src={SrcImage} alt="Coke" />
       </div>
+      {/* assigment */}
+      {users.map((user) => (
+        <UserDetail key={user.id} name={user.name} age={user.age} />
+      ))}
     </div>
   )
 }
