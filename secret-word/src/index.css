@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    background: #1f1f1f;
+    color: darkorange;
+}
+
+button {
+    background-color: darkorange;
+    color: #1f1f1f;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    transition: .4s;
+}
+
+button:hover {
+    background-color: #9f5700;
+}
