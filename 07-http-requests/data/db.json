@@ -1,19 +1,14 @@
 {
-    "products": [
-        {
-            "id": 0,
-            "name": "Controller",
-            "price": 247.99
-        },
-        {
-            "id": 1,
-            "name": "PS4 Game",
-            "price": 50.99
-        },
-        {
-            "id": 2,
-            "name": "Steam Credits",
-            "price": 100.99
-        }
-    ]
+  "products": [
+    {
+      "id": 0,
+      "name": "Controller",
+      "price": 247.99
+    },
+    {
+      "name": "Pencil",
+      "price": "0.49",
+      "id": 2
+    }
+  ]
 }

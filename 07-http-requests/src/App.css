@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.add-product {
+  margin-top: 10px;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  font-weight: 700;
+}
