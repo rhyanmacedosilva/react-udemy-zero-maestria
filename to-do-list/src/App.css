@@ -1,0 +1,9 @@
+.App {
+ text-align: center;
+}
+
+.tasks {
+  border: solid 1px darkorange;
+  width: 50%;
+  margin: 0 auto;
+}
