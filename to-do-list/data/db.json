@@ -1,16 +1,16 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "description": "Estudar React hooks"
-        },
-        {
-            "id": 2,
-            "description": "Comprar coisas do Pippo"
-        },
-        {
-            "id": 3,
-            "description": "Fazer deploy"
-        }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "description": "Estudar React hooks"
+    },
+    {
+      "description": "Limpar a casa",
+      "id": 2
+    },
+    {
+      "description": "Criar projeto React",
+      "id": 3
+    }
+  ]
 }

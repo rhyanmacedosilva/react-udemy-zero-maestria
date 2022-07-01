@@ -3,13 +3,15 @@ import './App.css'
 import Form from './components/Form'
 import { useHttp } from './hooks/useHttp'
 
+const url = 'http://localhost:3000/tasks'
+
 function App() {
-  const { data: tasks } = useHttp('/tasks')
+  const { data: tasks, manageRequestSettings } = useHttp({ url })
 
   return (
     <div className="App">
       <h1>Task Tracker</h1>
-      <Form />
+      <Form manageRequestSettings={manageRequestSettings} />
       <div className="tasks">
         {tasks && tasks.map((task) => (
           <Task
