@@ -1,32 +1,12 @@
 {
   "tasks": [
     {
-      "description": "1111",
-      "id": 11
+      "description": "Fazer compras",
+      "id": 1
     },
     {
-      "description": "Teste",
-      "id": 12
-    },
-    {
-      "description": "2222",
-      "id": 13
-    },
-    {
-      "description": "4444",
-      "id": 14
-    },
-    {
-      "description": "7777",
-      "id": 15
-    },
-    {
-      "description": "0000",
-      "id": 16
-    },
-    {
-      "description": "2323",
-      "id": 17
+      "description": "Estudar React",
+      "id": 2
     }
   ]
 }

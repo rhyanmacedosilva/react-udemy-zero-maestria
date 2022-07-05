@@ -1,23 +1,31 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export const useHttp = ({ url }) => {
     const [data, setData] = useState(null)
     const [settings, setSettings] = useState(null)
+    const [endpoint, setEndpoint] = useState(url)
 
-    const manageRequestSettings = ({ method, body }) => {
-        const settings = {
-            headers: { "Content-Type": "application/json" },
-            method: method
-        }
-        if (method === 'POST') {
-            settings.body = JSON.stringify(body)
-        }
-        setSettings(settings)
-    }
+    const manageRequestSettings = useCallback(
+        ({ method, body, id }) => {
+            const settings = {
+                headers: { "Content-Type": "application/json" },
+                method: method
+            }
+            if (method === 'GET') {
+                setEndpoint(url)
+            } else if (method === 'POST') {
+                settings.body = JSON.stringify(body)
+                setEndpoint(url)
+            } else if (method === 'DELETE') {
+                setEndpoint(url + '/' + id)
+            }
+            setSettings(settings)
+        }, [url]
+    )
 
     useEffect(() => {
         const fetchData = () => {
-            fetch(url, settings)
+            fetch(endpoint, settings)
                 .then((res) => (res.json()))
                 .then((data) => {
                     if (!settings || settings.method === 'GET') {
@@ -34,7 +42,7 @@ export const useHttp = ({ url }) => {
                 })
         }
         fetchData()
-    }, [url, settings])
+    }, [settings, endpoint, manageRequestSettings])
 
     return { data, manageRequestSettings }
 }

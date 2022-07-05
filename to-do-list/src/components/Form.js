@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Form.css'
 
-const Form = ({ manageRequestSettings }) => {
+const Form = ({ manageRequestSettings, taskToUpdate, setTaskToUpdate }) => {
     const [description, setDescription] = useState('')
 
     const handleSubmit = (e) => {
@@ -9,24 +9,32 @@ const Form = ({ manageRequestSettings }) => {
         const taskToAdd = { description }
         manageRequestSettings({
             method: 'POST',
-            body: taskToAdd
+            body: taskToAdd,
+            id: null
         })
         setDescription('')
+        setTaskToUpdate(null)
+    }
+
+    const handleChange = (e) => {
+        const inputValue = e.target.value
+        setDescription(inputValue)
+        if (taskToUpdate) {
+            taskToUpdate.description = inputValue
+        }
     }
 
     return (
-        <div className="form-container">
-            <form onSubmit={handleSubmit}>
-                <input
-                    required
-                    type="text"
-                    name="description"
-                    value={description}
-                    onChange={(e) => (setDescription(e.target.value))}
-                />
-                <button>Adicionar</button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <input
+                required
+                type="text"
+                name="description"
+                value={!taskToUpdate ? description : taskToUpdate.description}
+                onChange={handleChange}
+            />
+            <button>Adicionar</button>
+        </form>
     )
 }
 
