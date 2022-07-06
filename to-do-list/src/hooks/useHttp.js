@@ -18,6 +18,9 @@ export const useHttp = ({ url }) => {
                 setEndpoint(url)
             } else if (method === 'DELETE') {
                 setEndpoint(url + '/' + id)
+            } else if (method === 'PUT') {
+                settings.body = JSON.stringify(body)
+                setEndpoint(url + '/' + id)
             }
             setSettings(settings)
         }, [url]

@@ -6,12 +6,22 @@ const Form = ({ manageRequestSettings, taskToUpdate, setTaskToUpdate }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const taskToAdd = { description }
-        manageRequestSettings({
-            method: 'POST',
-            body: taskToAdd,
-            id: null
-        })
+
+        if (!taskToUpdate) {
+            const taskToAdd = { description }
+            manageRequestSettings({
+                method: 'POST',
+                body: taskToAdd,
+                id: null
+            })
+        } else {
+            manageRequestSettings({
+                method: 'PUT',
+                body: { description: taskToUpdate.description },
+                id: taskToUpdate.id
+            })
+        }
+
         setDescription('')
         setTaskToUpdate(null)
     }
@@ -33,7 +43,7 @@ const Form = ({ manageRequestSettings, taskToUpdate, setTaskToUpdate }) => {
                 value={!taskToUpdate ? description : taskToUpdate.description}
                 onChange={handleChange}
             />
-            <button>Adicionar</button>
+            <button>{!taskToUpdate ? 'Adicionar' : 'Alterar'}</button>
         </form>
     )
 }
