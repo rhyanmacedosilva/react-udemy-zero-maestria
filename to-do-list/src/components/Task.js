@@ -1,6 +1,6 @@
 import './Task.css'
 
-const Task = ({ id, description, manageRequestSettings, prepareToUpdateTask }) => {
+const Task = ({ id, description, completed, manageRequestSettings, prepareToUpdateTask }) => {
     const handleDelete = (id) => {
         manageRequestSettings({
             method: 'DELETE',
@@ -13,9 +13,17 @@ const Task = ({ id, description, manageRequestSettings, prepareToUpdateTask }) =
         prepareToUpdateTask(id)
     }
 
+    const handleTaskClick = (id) => {
+        manageRequestSettings({
+            method: 'PUT',
+            body: { description: description, completed: !completed },
+            id: id
+        })
+    }
+
     return (
-        <div className="task">
-            <span>{description}</span>
+        <div className={completed ? 'task task-completed' : 'task'}>
+            <span onClick={() => handleTaskClick(id)}>{description}</span>
             <div className="task-btn">
                 <button onClick={() => { handleUpdate(id) }}>Alterar</button>
                 <button onClick={() => { handleDelete(id) }}>Deletar</button>

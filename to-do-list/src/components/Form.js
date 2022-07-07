@@ -8,7 +8,7 @@ const Form = ({ manageRequestSettings, taskToUpdate, setTaskToUpdate }) => {
         e.preventDefault()
 
         if (!taskToUpdate) {
-            const taskToAdd = { description }
+            const taskToAdd = { description, completed: false }
             manageRequestSettings({
                 method: 'POST',
                 body: taskToAdd,
@@ -17,7 +17,7 @@ const Form = ({ manageRequestSettings, taskToUpdate, setTaskToUpdate }) => {
         } else {
             manageRequestSettings({
                 method: 'PUT',
-                body: { description: taskToUpdate.description },
+                body: { description: taskToUpdate.description, completed: false },
                 id: taskToUpdate.id
             })
         }

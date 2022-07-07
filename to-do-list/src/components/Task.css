@@ -2,4 +2,14 @@
     display: flex;
     width: 400px;
     justify-content: space-between;
+    user-select: none;
+}
+
+.task-completed span {
+    text-decoration: line-through;
+    opacity: 0.2;
+}
+
+.task span {
+    cursor: pointer;
 }

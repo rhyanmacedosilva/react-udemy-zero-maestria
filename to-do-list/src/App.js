@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Task Tracker</h1>
+      <h1>- Task Tracker -</h1>
       <Form
         manageRequestSettings={manageRequestSettings}
         taskToUpdate={taskToUpdate}
@@ -30,6 +30,7 @@ function App() {
             key={task.id}
             id={task.id}
             description={task.description}
+            completed={task.completed}
             manageRequestSettings={manageRequestSettings}
             prepareToUpdateTask={prepareToUpdateTask}
           />

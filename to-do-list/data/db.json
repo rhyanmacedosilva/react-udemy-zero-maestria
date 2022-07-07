@@ -1,19 +1,23 @@
 {
   "tasks": [
     {
-      "description": "Estudar React",
+      "description": "Comprar sofá",
+      "completed": true,
       "id": 1
     },
     {
-      "description": "Battle Pass Fortnite",
+      "description": "Comprar sachê do Pippo",
+      "completed": false,
       "id": 2
     },
     {
-      "description": "Comprar Sofá",
+      "description": "Liberar skin Indiana Jones",
+      "completed": false,
       "id": 3
     },
     {
-      "description": "Comprar sachê do Pippo",
+      "description": "Apenas testando",
+      "completed": true,
       "id": 4
     }
   ]
