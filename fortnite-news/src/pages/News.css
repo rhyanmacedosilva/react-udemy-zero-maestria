@@ -1,0 +1,36 @@
+.news-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.news-list-item {
+    margin-bottom: 4px;
+    display: flex;
+    border: 1px solid lightgray;
+}
+
+.news-list-item-like {
+    border: none;
+    background-color: crimson;
+    color: #fff;
+    flex-basis: 10%;
+}
+
+.news-list-item-content {
+    background-color: #f7f7f7;
+    padding: 10px;
+    flex-basis: 90%;
+}
+
+.news-list-item-content-title {
+    font-weight: 700;
+}
+
+.news-list-item-content-body {
+    color: lightgrey;
+}
+
+.news-list-item-like:hover {
+    background-color: #a81431;
+    cursor: pointer;
+}
